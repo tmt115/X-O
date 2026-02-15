@@ -1,2 +1,2 @@
 # X-O
-Computer Vision model for detecting X's, O's, Blanks for Tic-Tac-Toe
+This is a Computer Vision Model For Detecting X's, O's, and Blanks using TensorFlow. Takes in a dataset of each (not included), and manipulates the images for greater detection accuracy. Personally, I trained this on a dataset of 3000 images. Current testing was for 20 epochs, but this is not necessary, accuracy will converge quick during training (99-100% within a few epochs). Initial testing of the model has shown it to be accurate in its detections with almost 100% confidence.
