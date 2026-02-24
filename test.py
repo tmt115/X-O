@@ -2,24 +2,22 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-IMG_SIZE = 64
-
 model = tf.keras.models.load_model("xoblank.keras")
 
-class_names = ['o', 'x', 'blank']
+classNames = ['o', 'x', 'blank']
 
 img = Image.open("test_x.jpeg").convert("L")
-img = img.resize((IMG_SIZE, IMG_SIZE))
+img = img.resize((64, 64))
 
-img_array = np.array(img)
-img_array = np.expand_dims(img_array, axis=-1)
-img_array = np.expand_dims(img_array, axis=0)
+imgArr = np.array(img)
+imgArr = np.expand_dims(imgArr, axis=-1)
+imgArr = np.expand_dims(imgArr, axis=0)
 
-predictions = model.predict(img_array)
+prediction = model.predict(imgArr)
 
-predicted_class = np.argmax(predictions[0])
+predictedLet = np.argmax(prediction[0])
 
-print("Prediction:", class_names[predicted_class])
-print("Confidence:", np.max(predictions[0]))
-print(class_names)
-print(predictions[0])
+print("Prediction:", class_names[predictedLet])
+print("Confidence:", np.max(prediction[0]))
+print(classNames)
+print(prediction[0])
