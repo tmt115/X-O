@@ -104,4 +104,7 @@ for epoch in range(num_epoch):
         val_loss = running_loss / len(val_loader.dataset)
         val_losses.append(val_loss)
 
-    print(f"Epoch {epoch+1}/{num_epoch} - Train loss: {training_loss}, Validation loss: {val_loss}")
+    print(f"Epoch {epoch+1}/{num_epoch} - Train loss: {training_loss:.4f}, Validation loss: {val_loss:.4f}")
+
+torch.save(model.state_dict(), "xo_model.pth")
+print("Model saved to xo_model.pth")
